@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import Search from "./compenant/Search";
+import Line from "./compenant/Line";
+import Footer from "./compenant/Footer";
+import { useState } from "react";
 
 function App() {
+  const [emoji, setEmoji] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search titre="😎 Emoji Search 😎 " emoji={emoji} setemoji={setEmoji} />
+      <Line emoji={emoji} />
+      <Footer titre="Made with React at Le Reacteur by Doud" />
     </div>
   );
 }
